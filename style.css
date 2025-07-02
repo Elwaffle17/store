@@ -7,20 +7,38 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+
+.todo_todito {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 nav {
   position: fixed;
+  top: 0;
   z-index: 99;
   width: 100%;
-  background: white;
-  opacity: 0.95;
+  background: whitesmoke;
+  opacity: 0.98;
 }
 
 nav .wrapper {
   position: relative;
-  max-width: 1300px;
+  max-width: 1000px;
   padding: 0px 30px;
-  height: 70px;
-  line-height: 70px;
+  height: 50px;
+  line-height: 50px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -46,7 +64,7 @@ nav .wrapper {
 .nav-links li a {
   color: black;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   padding: 9px 15px 9px 20px;
   border-radius: 5px;
@@ -75,7 +93,7 @@ nav .wrapper {
 .nav-links li:hover .drop-menu,
 .nav-links li:hover .mega-box {
   transition: all 0.3s ease;
-  top: 70px;
+  top: 50px;
   opacity: 1;
   visibility: visible;
   
@@ -93,14 +111,14 @@ nav .wrapper {
   position: absolute;
   left: 0;
   width: 100%;
-  padding: 0 50px;
+  padding: 0 5px;
   top: 85px;
   opacity: 0;
   visibility: hidden;
 }
 
 .mega-box .content {
-  background: white;
+  background: whitesmoke;
   padding: 25px 40px;
   display: flex;
   width: 100%;
@@ -109,7 +127,7 @@ nav .wrapper {
 }
 
 .mega-box .content .row {
-  width: calc(25% - 30px);
+  width: calc(50% - 15px);
   line-height: 45px;
 }
 
@@ -170,10 +188,10 @@ nav .wrapper {
     position: fixed;
     height: 100vh;
     width: 100%;
-    max-width: 900px;
-    top: -150%;
+    max-width: 800px;
+    top: -100%;
     right: 0;
-    background: white;
+    background: whitesmoke;
     display: block;
     padding: 50px 10px;
     line-height: 50px;
@@ -216,25 +234,21 @@ nav .wrapper {
     padding: 0 20px;
     display: block;
     color: #404040;
-    font-size: 35px;
+    font-size: 30px;
     
   }
 
 
   
-  #showMega:checked~.mega-box {
+  #showMega:checked~.mega-box,  
+  #showMega2:checked~.mega-box, 
+  #showMega3:checked~.mega-box,
+  #showMega4:checked~.mega-box,
+  #showMega5:checked~.mega-box,
+  #showMega6:checked~.mega-box,
+  #showMega7:checked~.mega-box {
     max-height: 100%;
     transition: all 0.3s ease;
-  }
-
-  #showMega2:checked~.mega-box {
-    max-height: 100%;
-    transition: all 0.3s ease;
-  }
-
-
-  #showMega3:checked~.mega-box {
-    max-height: 100%;
   }
 
   .nav-links .desktop-item {
@@ -244,7 +258,7 @@ nav .wrapper {
   .nav-links .mobile-item {
     display: block;
     color: #404040;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 500;
     padding-left: 20px;
     cursor: pointer;
@@ -330,4 +344,400 @@ body {
 .body-text div {
   font-size: 45px;
   font-weight: 600;
+}
+
+
+/*titulo*/
+
+
+.encabezado {
+  margin: 70px 20px 20px;
+  display: flex;
+}
+
+.h1_black, .h1_color {
+  font-size: 50px;
+}
+
+.h1_black {
+  color: black;
+}
+
+.h1_color {
+  color: gray;
+  margin: 0 0 0 10px;
+}
+
+
+.container_texto {
+  max-width: 1000px;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container_texto h2 {
+  font-size: 30px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.container_texto p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: gray;
+}
+
+.encabezados_productos {
+  margin: 30px 20px 10px;
+  display: flex;
+}
+.h2_black, .h2_color {
+  font-size: 25px;
+}
+
+.h2_black {
+  color: black;
+}
+
+.h2_color {
+  color: gray;
+  margin: 0 0 0 10px;
+}
+
+.tarjeta {
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.3s ease; /* Transición suave para hover */
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+/*------------Carruselvertical-----------*/
+
+.carousel-container {
+  width: 100%; /* Ancho responsivo */
+  /*max-width: 1200px; /* Ancho máximo para el carrusel */
+  overflow: hidden; /* Oculta las tarjetas que salen del contenedor */
+  position: relative;
+  border-radius: 10px;
+  padding: 20px 0; /* Espacio para que las sombras se vean bien */
+}
+
+.carousel-track {
+  display: flex; /* Para que las tarjetas se alineen horizontalmente */
+  width: fit-content; /* Se ajusta al contenido total de las tarjetas */
+  animation: scroll 30s linear infinite; /* Animación de desplazamiento */
+}
+
+.carousel-card {
+  flex: 0 0 auto; /* No permite que las tarjetas se encojan o expandan */
+  width: 280px; /* Ancho fijo de la tarjeta */
+  margin: 0 15px; /* Espacio entre tarjetas */
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease; /* Transición suave para hover */
+}
+
+.carousel-card:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.img_carrusel1 {
+  width: 100%;
+  height: 350px; /* Altura fija de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+  border-bottom: 1px solid #eee;
+}
+
+.carousel-card h3 {
+  margin: 15px 0 10px;
+  color: #333;
+}
+
+.carousel-card p {
+  padding: 0 15px 15px;
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* Animación de desplazamiento */
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%); /* Desplaza el track a la mitad de su tamaño */
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .carousel-card {
+      width: 250px; /* Ancho más pequeño en pantallas medianas */
+      margin: 0 10px;
+  }
+
+  .carousel-card img {
+      height: 300px;
+  }
+
+  .carousel-container {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-card {
+      width: 200px; /* Ancho aún más pequeño en pantallas pequeñas */
+      margin: 0 8px;
+  }
+
+  .carousel-card img {
+      height: 250px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Productos destacados */
+
+.cont_tarjetas_productos {
+  margin: 20px 10px 10px 0px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  gap: 10px;
+}
+
+.tarjeta {
+  border-radius: 8px;
+  padding: 40px 20px 20px 20px;
+  text-align: center;
+}
+
+.img_tarjeta {
+  width: 90px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 12px;
+  margin: 10px 0 0 0;
+  color: black;
+}
+
+
+/*@media screen and (min-width: 900px) {
+  .cont_tarjetas_productos {
+  margin: 20px 10px 10px 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  gap: 10px;
+}
+
+.tarjeta {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.img_tarjeta {
+  width: 60px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 15px;
+  margin:  0 20px 0 20px;
+}
+
+}*/
+
+
+
+
+
+/*------------footer----------------*/
+
+/* Estilos generales */
+
+/* Estilos del Footer */
+.footer {
+  background-color: wheatsmoke;
+  /* Color de fondo oscuro */
+  color: gray;
+  /* Color de texto claro */
+  padding: 40px 20px;
+  margin-top: auto;
+  /* Empuja el footer hacia abajo */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  justify-content: space-around;
+  gap: 10px;
+  /* Espacio entre las secciones del footer */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  /* Permite que las secciones crezcan y se encojan */
+  min-width: 250px;
+  /* Ancho mínimo para cada sección */
+  margin-bottom: 20px;
+  /* Espacio inferior para cada sección en dispositivos móviles */
+}
+
+.footer-section h3 {
+  color: black;
+  /* Color de los títulos */
+  margin-bottom: 15px;
+  font-size: 30px;
+  text-align: start;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: start;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  color: gray;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: black;
+  /* Color al pasar el ratón */
+}
+
+/* Enlaces de Redes Sociales */
+.social-links a {
+  color: gray;
+  font-size: 20px;
+  margin-right: 15px;
+  margin-top: 20px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: black;
+}
+
+/* Sección de Contacto - Iconos */
+.footer-section.contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-section.contact p i {
+  color: black;
+}
+
+/* Parte inferior del Footer (copyright) */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(236, 240, 241, 0.1);
+  /* Línea divisoria */
+  font-size: 0.85em;
+  color: gray;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    /* Apila las secciones en pantallas pequeñas */
+    align-items: center;
+    /* Centra las secciones */
+  }
+
+  .footer-section {
+    min-width: unset;
+    /* Deshabilita el min-width para permitir que se expandan */
+    width: 90%;
+    /* Ancho del 90% para mejor visualización en móviles */
+    text-align: center;
+    /* Centra el texto de las secciones */
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    /* Centra los iconos de redes sociales */
+    gap: 15px;
+  }
+
+  .footer-section form {
+    justify-content: center;
+    /* Centra el formulario */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 15px;
+  }
+
+  .footer-section h3 {
+    font-size: 1.1em;
+  }
+
+  .footer-section p,
+  .footer-section ul {
+    font-size: 0.9em;
+  }
+
+  .footer-section form input[type="email"],
+  .footer-section form button {
+    width: 100%;
+    /* Ocupan todo el ancho en pantallas muy pequeñas */
+  }
 }
